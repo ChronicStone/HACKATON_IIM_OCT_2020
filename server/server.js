@@ -19,6 +19,7 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(helmet())
+app.use("/static", express.static( "public" ) );
 
 // simple route
 app.get("/", (req, res) => {

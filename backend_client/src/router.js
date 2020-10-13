@@ -42,6 +42,13 @@ const router = new Router({
                 component: () => import('./views/ImportResidents.vue')
               },
               {
+                path: "/resident/:id",
+                name: "residentDetail",
+                component: () =>
+                    import ("./views/ResidentProfile.vue"),
+                props: true
+              },
+              {
                 path: '/page2',
                 name: 'page-2',
                 component: () => import('./views/Page2.vue')

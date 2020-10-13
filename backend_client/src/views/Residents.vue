@@ -91,6 +91,7 @@
 <script>
 import { AgGridVue } from "ag-grid-vue";
 import "@/assets/scss/vuexy/extraComponents/agGridStyleOverride.scss";
+import CellRendererActions from "./cell-renderer/CellRendererActions.vue";
 import CellRendererValue from "./cell-renderer/CellRendererValue.vue";
 import CellRendererDate from "./cell-renderer/CellRendererDate.vue";
 import CellRendererDateTime from "./cell-renderer/CellRendererDateTime.vue";
@@ -100,6 +101,7 @@ import CellRendererDateTime from "./cell-renderer/CellRendererDateTime.vue";
 export default {
 	components: {
 		AgGridVue,
+		CellRendererActions,
 		CellRendererValue,
 		CellRendererDate,
 		CellRendererDateTime
@@ -126,7 +128,8 @@ export default {
 			gridComponents: {
 				CellRendererValue,
 				CellRendererDate,
-				CellRendererDateTime
+				CellRendererDateTime,
+				CellRendererActions
 			},
 
 			// AgGrid Columns def
@@ -136,6 +139,7 @@ export default {
 					field: "id",
 					width: 150,
 					checkboxSelection: true,
+					cellRendererFramework: "CellRendererActions",
 					headerCheckboxSelectionFilteredOnly: true,
 					headerCheckboxSelection: true,
 				},
