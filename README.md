@@ -23,6 +23,9 @@ Create a MYSQL Database on your computer, & then go to the .ENV file located at 
 * cd backend_app
 * npm install
 
+### Go to Edit the file located at the following path : ~/backend_client/src/config/index.js
+* Define the API URL where all requests will be directed (No need to modify it if you are running the project on your own computer)
+
 ## 3 - Start applications :
 
 ### A. Server app :
