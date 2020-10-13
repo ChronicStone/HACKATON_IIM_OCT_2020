@@ -55,7 +55,7 @@ exports.getRetirementHomeById = (req, res) => {
         where: {
             id: req.params.retirementHomeId
         },
-        includes: [{
+        include: [{
             model: db.residents,
             as: "residents",
             where: {

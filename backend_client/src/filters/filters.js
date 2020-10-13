@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import moment from "moment"
 
 Vue.filter('title', function (value, replacer = '_') {
   if (!value) return ''
@@ -11,4 +12,13 @@ Vue.filter('title', function (value, replacer = '_') {
     capitalized_array.push(capitalized)
   })
   return capitalized_array.join(' ')
+})
+
+
+Vue.filter('formatDate', (value) => {
+  return moment(value).format('MMMM Do YYYY')
+})
+
+Vue.filter('formatDateTime', (value) => {
+  return moment(String(value)).format("MM/DD/YYYY hh:mm");
 })

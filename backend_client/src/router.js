@@ -33,8 +33,13 @@ const router = new Router({
         // =============================================================================
               {
                 path: '/',
-                name: 'home',
-                component: () => import('./views/Home.vue')
+                name: 'residents',
+                component: () => import('./views/Residents.vue')
+              },
+              {
+                path: '/import',
+                name: 'importResidents',
+                component: () => import('./views/ImportResidents.vue')
               },
               {
                 path: '/page2',
@@ -72,6 +77,20 @@ const router = new Router({
         }
     ],
 })
+
+router.beforeEach((to, from, next) => {
+  const publicPages = ["/pages/login", "/pages/error-404",];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = JSON.parse(localStorage.getItem("backendUser"));
+  if(loggedIn) console.log('LOGGED IN')
+  // trying to access a restricted page + not logged in
+  // redirect to login page
+  if (authRequired && !loggedIn) {
+      next("/pages/login");
+  } else {
+      next();
+  }
+});
 
 router.afterEach(() => {
   // Remove initial loading

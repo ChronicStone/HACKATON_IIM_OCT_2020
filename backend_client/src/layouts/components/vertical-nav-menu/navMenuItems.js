@@ -11,9 +11,9 @@
 export default [
   {
     url: "/",
-    name: "Home",
-    slug: "home",
-    icon: "HomeIcon",
+    name: "Residents",
+    slug: "residents",
+    icon: "UsersIcon",
   },
   {
     url: "/page2",

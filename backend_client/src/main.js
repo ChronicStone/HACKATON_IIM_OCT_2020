@@ -22,6 +22,10 @@ Vue.use(Vuesax)
 import axios from './axios.js'
 Vue.prototype.$axios = axios
 
+import { ValidationProvider, ValidationObserver } from "vee-validate";
+Vue.component("ValidationProvider", ValidationProvider);
+Vue.component("ValidationObserver", ValidationObserver);
+
 // Filters
 import './filters/filters.js'
 

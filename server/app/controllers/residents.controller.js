@@ -68,7 +68,7 @@ exports.getResidentById = (req, res) => {
         where: {
             id: req.params.residentId
         },
-        includes: [{
+        include: [{
             model: db.residentContacts,
             where: {
                 resident_id: db.Sequelize.col("resident.id")

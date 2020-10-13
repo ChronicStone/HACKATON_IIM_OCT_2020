@@ -17,15 +17,15 @@
       <vs-navbar class="vx-navbar navbar-custom navbar-skelton" :color="navbarColorLocal" :class="textColor">
 
         <!-- SM - OPEN SIDEBAR BUTTON -->
-        <feather-icon class="sm:inline-flex xl:hidden cursor-pointer p-2" icon="MenuIcon" @click.stop="showSidebar" />
-
-        <bookmarks :navbarColor="navbarColor" v-if="windowWidth >= 992" />
+        <feather-icon class="sm:inline-flex xl:hidden cursor-pointer p-2 mr-3" icon="MenuIcon" @click.stop="showSidebar" />
+        <h3 style="">{{activeUserData.retirement_home.name}}</h3>
+        <!-- <bookmarks :navbarColor="navbarColor" v-if="windowWidth >= 992" /> -->
 
         <vs-spacer />
 
-        <search-bar class="mr-4" />
+        <!-- <search-bar class="mr-4" /> -->
 
-        <notification-drop-down />
+        <!-- <notification-drop-down /> -->
 
         <profile-drop-down />
 
@@ -74,6 +74,9 @@ export default {
       if      (this.verticalNavMenuWidth === 'default') return 'navbar-default'
       else if (this.verticalNavMenuWidth === 'reduced') return 'navbar-reduced'
       else if (this.verticalNavMenuWidth)               return 'navbar-full'
+    },
+    activeUserData() {
+      return JSON.parse(localStorage.getItem('backendUser')).data
     }
   },
   methods: {
