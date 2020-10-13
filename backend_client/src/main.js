@@ -21,7 +21,7 @@ Vue.use(Vuesax)
 // axios
 import axios from './axios.js'
 Vue.prototype.$axios = axios
-
+Vue.prototype.$assetUrl = 'http://localhost:2020/static/files'
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 Vue.component("ValidationProvider", ValidationProvider);
 Vue.component("ValidationObserver", ValidationObserver);

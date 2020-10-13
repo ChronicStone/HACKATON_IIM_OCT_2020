@@ -227,8 +227,6 @@ export default {
 			if(params) {
 				this.gridApi = params.api
 				this.columnApi = params.columnApi
-
-				console.log({grid: this.gridApi, col: this.columnApi});
 			}
 			this.$vs.loading()
 			this.$axios.get(`/resident/${JSON.parse(localStorage.getItem('backendUser')).data.retirement_home_id}`)
@@ -236,9 +234,7 @@ export default {
 				this.residentList = response.data.data
 				this.$vs.loading.close()
 				this.mounted = true
-				console.log({colApi: this.gridOptions.columnApi});
 				this.gridApi.sizeColumnsToFit()
-				this.gridApi.autoSizeAllColumns()
 			}).catch((err) => {
 				console.log(err);
 			})

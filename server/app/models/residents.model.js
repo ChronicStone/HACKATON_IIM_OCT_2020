@@ -22,10 +22,18 @@ module.exports = function(sequelize, DataTypes) {
         other_name: {
             type: DataTypes.STRING(45),
             allowNull: true,
+        },        gender: {
+            type: DataTypes.STRING(20),
+            allowNull: false,
+            defaultValue: 'm'
         },
         birth_date: {
             type: DataTypes.DATEONLY, 
             allowNull: false
+        },
+        resident_photo: {
+            type: DataTypes.STRING(255),
+            allowNull: true
         }
     }, {
         tableName: 'resident'

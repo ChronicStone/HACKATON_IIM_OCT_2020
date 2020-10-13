@@ -22,3 +22,12 @@ Vue.filter('formatDate', (value) => {
 Vue.filter('formatDateTime', (value) => {
   return moment(String(value)).format("MM/DD/YYYY hh:mm");
 })
+
+Vue.filter("formatObjectKey", function(value) {
+  return value.replace(/_/g, " ").replace(/(^\w|\s\w|[-]\w)/g, m => m.toUpperCase())
+})
+
+Vue.filter("formatNull", function(value) {
+  if(value != '' && value != null) return value
+  else return 'N/A'
+})
